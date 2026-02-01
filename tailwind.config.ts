@@ -9,15 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#F9F7F2",
-        foreground: "#0F0F0D",
-        primary: "#1A3C34",
-        secondary: "#E2DDD5",
-        accent: "#4A2C2F",
+        background: "#161616",
+        foreground: "#FEF8E8",
+        primary: "#161616",
+        accent: "#F44A22",
+        highlight: "#D81E28",
+        surface: "#FEF8E8",
       },
       fontFamily: {
-        crimson: ["var(--font-crimson)", "serif"],
+        clash: ["var(--font-clash)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+        jetbrains: ["var(--font-jetbrains)", "monospace"],
       },
       transitionDuration: {
         fast: "200ms",
