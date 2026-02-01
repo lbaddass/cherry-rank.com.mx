@@ -182,7 +182,7 @@ export default function HomePage() {
             Sabemos lo que cuesta levantar un negocio en México. Creamos Cherry
             Rank para democratizar el éxito, usando la mejor tecnología para que
             el pequeño comercio tenga las armas de los gigantes.
-          p>
+          </p>
           <div className="mt-8">
             <Button
               size="lg"
