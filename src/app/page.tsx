@@ -43,7 +43,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="block"
               >
-                "gato por liebre"
+                &quot;gato por liebre&quot;
               </motion.span>
             </motion.h1>
             <motion.h2
@@ -73,11 +73,6 @@ export default function HomePage() {
               reportes de 40 páginas que nadie lee.
             </h2>
           </div>
-import { DescendingGraph } from "@/components/ui/DescendingGraph";
-import { AscendingPulse } from "@/components/ui/AscendingPulse";
-
-// ... (previous code)
-
           <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
             <div className="space-y-4 rounded-lg bg-background/5 p-8">
               <DescendingGraph />
@@ -98,7 +93,6 @@ import { AscendingPulse } from "@/components/ui/AscendingPulse";
               </p>
             </div>
           </div>
-// ... (rest of the code)
         </Container>
       </Section>
       <Section className="flex items-center justify-center">
@@ -108,9 +102,6 @@ import { AscendingPulse } from "@/components/ui/AscendingPulse";
             <span className="text-accent">esteroides digitales</span> en 72
             horas.
           </h2>
-
-import { KineticCard } from "@/components/ui/KineticCard";
-//...
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <KineticCard
               icon="map"
@@ -128,7 +119,6 @@ import { KineticCard } from "@/components/ui/KineticCard";
               description="No solo te encuentran, te eligen. Creamos los mensajes que convierten clics en clientes."
             />
           </div>
-//...
         </Container>
       </Section>
       <Section className="flex items-center justify-center bg-surface text-background">
@@ -139,12 +129,9 @@ import { KineticCard } from "@/components/ui/KineticCard";
             <span className="text-foreground/70">Sin Letras Chiquitas.</span>
           </h2>
           <p className="mt-4 text-lg">
-            En México estamos acostumbrados al "presupuesto por DM". Aquí no. Tú
+            En México estamos acostumbrados al &quot;presupuesto por DM&quot;. Aquí no. Tú
             eliges, tú mandas.
           </p>
-
-import { BentoCard } from "@/components/ui/BentoCard";
-// ...
           <div className="mt-12 grid grid-cols-1 gap-4 text-background md:grid-cols-2 lg:grid-cols-4">
             <BentoCard
               className="lg:col-span-2"
@@ -160,13 +147,12 @@ import { BentoCard } from "@/components/ui/BentoCard";
               priceUnit="mes"
             />
             <BentoCard
-              title="Pack 'Imagen Perfecta'"
+              title="Pack &quot;Imagen Perfecta&quot;"
               description="10 fotos con ADN digital para Google Maps."
               price="950"
               priceUnit="único"
             />
           </div>
-// ...
         </Container>
       </Section>
       <Section className="flex items-center justify-center">
@@ -196,7 +182,7 @@ import { BentoCard } from "@/components/ui/BentoCard";
             Sabemos lo que cuesta levantar un negocio en México. Creamos Cherry
             Rank para democratizar el éxito, usando la mejor tecnología para que
             el pequeño comercio tenga las armas de los gigantes.
-          </p>
+          p>
           <div className="mt-8">
             <Button
               size="lg"
