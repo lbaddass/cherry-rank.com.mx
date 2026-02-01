@@ -1,23 +1,23 @@
 import Link from "next/link";
-import Button, { buttonClasses } from "@/components/ui/Button";
+import { buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 
 const valuePoints = [
   {
-    title: "Problema",
+    title: "El Dolor de la Invisibilidad",
     description:
-      "Las agencias venden actividad. La autoridad necesita infraestructura sostenible y métricas reales.",
+      "Los costos de depender de anuncios suben cada mes. Sin autoridad orgánica, tu marca pierde margen y control.",
   },
   {
-    title: "Solución",
+    title: "El Laberinto Normativo",
     description:
-      "Construimos sistemas de clusters, señales y activos editoriales que elevan la reputación digital.",
+      "Salud y política exigen precisión. Diseñamos arquitectura SEO que cumple políticas sin perder ranking.",
   },
   {
-    title: "Resultado",
+    title: "El Sistema Cherry Rank",
     description:
-      "Mayor confianza, visibilidad y demanda calificada para mercados de alta competencia.",
+      "Automatizamos la infraestructura para crecer con IA controlada, no con promesas mensuales.",
   },
 ];
 
@@ -27,15 +27,15 @@ export default function HomePage() {
       <Section>
         <Container className="space-y-8">
           <div className="space-y-4 max-w-3xl">
-            <p className="text-sm uppercase tracking-widest text-foreground/60">
-              Cherry Rank · Authority Architects
+            <p className="text-sm uppercase tracking-widest text-primary/70">
+              Cherry Rank · Search Engine Experts
             </p>
             <h1 className="text-4xl font-semibold md:text-6xl">
-              Arquitectos de autoridad para marcas que lideran su industria.
+              ¿Por qué tu competencia aparece y tú no?
             </h1>
             <p className="text-lg text-foreground/70">
-              Somos una consultora SEO boutique que diseña infraestructuras digitales con
-              precisión quirúrgica. No vendemos servicios: diseñamos dominio.
+              Cherry Rank construye infraestructura de autoridad SEO + IA para negocios
+              en México que necesitan visibilidad real, no campañas efímeras.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link href="/diagnostico" className={buttonClasses({ variant: "primary" })}>
@@ -49,7 +49,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section className="bg-white/60">
+      <Section className="bg-white/70">
         <Container>
           <div className="grid gap-8 md:grid-cols-3">
             {valuePoints.map((point) => (
@@ -65,28 +65,24 @@ export default function HomePage() {
       <Section>
         <Container className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-3xl font-semibold">
-              Infraestructura por encima de agencias.
-            </h2>
+            <h2 className="text-3xl font-semibold">Catálogo de activación inmediata</h2>
             <p className="text-foreground/70">
-              Las agencias prometen crecimiento rápido. Nosotros diseñamos sistemas de
-              autoridad que perduran y resisten cambios algorítmicos. Nuestro enfoque
-              integra arquitectura de contenidos, reputación editorial y análisis de
-              intención para dominar territorios de búsqueda complejos.
+              Servicios listos para arrancar tu infraestructura sin fricción técnica. Cada
+              paquete es un módulo de autoridad diseñado para acelerar el posicionamiento.
             </p>
-            <p className="text-foreground/70">
-              Trabajamos con equipos internos y líderes que entienden el valor estratégico
-              de la confianza digital. Cada implementación es un mapa de poder para su
-              negocio.
-            </p>
+            <Link href="/servicios" className={buttonClasses({ variant: "outline" })}>
+              Explorar catálogo
+            </Link>
           </div>
-          <div className="space-y-6 border border-secondary bg-white/50 p-6">
-            <h3 className="text-2xl font-semibold">Diagnóstico inicial</h3>
+          <div className="space-y-6 border border-secondary bg-white/60 p-6">
+            <h3 className="text-2xl font-semibold">Filtro de autoridad</h3>
             <p className="text-foreground/70">
-              Evaluamos señales técnicas, narrativa de marca y oportunidades de autoridad
-              para proyectar el plan maestro.
+              Para clínicas, proyectos políticos o negocios regulados, necesitamos validar
+              complejidad antes de activar infraestructura.
             </p>
-            <Button>Iniciar conversación</Button>
+            <Link href="/especializado" className={buttonClasses({ variant: "primary" })}>
+              Diagnóstico especializado
+            </Link>
           </div>
         </Container>
       </Section>

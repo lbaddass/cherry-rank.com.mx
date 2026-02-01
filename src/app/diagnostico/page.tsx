@@ -11,10 +11,12 @@ export default function DiagnosticoPage() {
       <Section>
         <Container className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h1 className="text-4xl font-semibold md:text-5xl">Diagnóstico de autoridad</h1>
+            <h1 className="text-4xl font-semibold md:text-5xl">
+              Diagnóstico especializado
+            </h1>
             <p className="text-foreground/70">
-              Este formulario filtra proyectos de alto impacto en salud, política y sectores
-              altamente regulados. Responde con claridad para recibir un análisis.
+              Para clínicas, proyectos políticos o marcas reguladas, validamos requisitos y
+              riesgos antes de activar infraestructura SEO.
             </p>
           </div>
           <form className="space-y-6 border border-secondary bg-white/50 p-6">
@@ -24,13 +26,13 @@ export default function DiagnosticoPage() {
             </div>
             <div className="space-y-2">
               <label className="text-sm font-semibold uppercase tracking-wide">Sitio web</label>
-              <Input placeholder="https://" />
+              <Input placeholder="https://tusitio.com" />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-semibold uppercase tracking-wide">
                 Presupuesto estimado
               </label>
-              <Input placeholder="MXN" />
+              <Input placeholder="Rango en MXN" />
             </div>
             <Button type="submit">Solicitar análisis</Button>
           </form>

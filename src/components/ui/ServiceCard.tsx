@@ -21,9 +21,7 @@ export default function ServiceCard({ title, price, features, slug }: ServiceCar
     >
       <div className="space-y-4">
         <div>
-          <h3 className="text-2xl font-semibold text-foreground font-crimson">
-            {title}
-          </h3>
+          <h3 className="text-2xl font-semibold text-foreground">{title}</h3>
           <p className="mt-2 text-xl font-bold text-primary font-inter">{price}</p>
         </div>
         <ul className="space-y-2 text-sm text-foreground/80">
@@ -40,7 +38,7 @@ export default function ServiceCard({ title, price, features, slug }: ServiceCar
           href={`/checkout?service=${slug}`}
           className={buttonClasses({ variant: "outline" })}
         >
-          Contratar
+          Comprar ahora
         </Link>
       </div>
     </motion.article>

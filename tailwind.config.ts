@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#F9F7F2",
-        foreground: "#0F0F0D",
-        primary: "#1A3C34",
-        secondary: "#E2DDD5",
-        accent: "#4A2C2F",
+        background: "#FFF5F5",
+        foreground: "#1B0B0B",
+        primary: "#B10F2E",
+        secondary: "#F3D3D8",
+        accent: "#5A0A18",
       },
       fontFamily: {
-        crimson: ["var(--font-crimson)", "serif"],
+        grotesk: ["var(--font-grotesk)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
       },
       transitionDuration: {

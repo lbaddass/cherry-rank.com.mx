@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -48,11 +49,19 @@ export default function ServiciosPage() {
       <Section>
         <Container className="space-y-8">
           <div className="max-w-2xl space-y-3">
-            <h1 className="text-4xl font-semibold md:text-5xl">Servicios de autoridad</h1>
+            <h1 className="text-4xl font-semibold md:text-5xl">
+              Catálogo de activación inmediata
+            </h1>
             <p className="text-foreground/70">
-              Paquetes diseñados para líderes que buscan influencia sostenible en mercados
-              de alta exigencia.
+              Selección de micro-servicios para desplegar autoridad SEO con velocidad. Para
+              nichos delicados, inicia un diagnóstico especializado.
             </p>
+            <Link
+              href="/especializado"
+              className="text-sm font-semibold uppercase tracking-widest text-primary/70"
+            >
+              Ver sector salud y político
+            </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {services.map((service) => (

@@ -3,7 +3,8 @@ import { Container } from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import { buttonClasses } from "@/components/ui/Button";
 
-const WHATSAPP_NUMBER = "5215512345678";
+const WHATSAPP_NUMBER =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5215512345678";
 
 type CheckoutPageProps = {
   searchParams?: {
@@ -13,7 +14,7 @@ type CheckoutPageProps = {
 
 export default function CheckoutPage({ searchParams }: CheckoutPageProps) {
   const serviceName = searchParams?.service?.replace(/-/g, " ") ?? "Servicio";
-  const message = `Hola, envío comprobante para ${serviceName}`;
+  const message = `Hola Cherry Rank, envío comprobante para ${serviceName}`;
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     message
   )}`;
@@ -23,9 +24,12 @@ export default function CheckoutPage({ searchParams }: CheckoutPageProps) {
       <Section>
         <Container className="space-y-8">
           <div className="max-w-2xl space-y-3">
-            <h1 className="text-4xl font-semibold md:text-5xl">Checkout de autoridad</h1>
+            <h1 className="text-4xl font-semibold md:text-5xl">
+              Paso final: activación de infraestructura
+            </h1>
             <p className="text-foreground/70">
-              Seleccionaste: <span className="font-semibold">{serviceName}</span>
+              Hemos recibido tu orden para{" "}
+              <span className="font-semibold">{serviceName}</span>.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
@@ -41,15 +45,20 @@ export default function CheckoutPage({ searchParams }: CheckoutPageProps) {
                 <p>
                   <span className="font-semibold text-foreground">Titular:</span> Cherry Rank
                 </p>
+                <p>
+                  <span className="font-semibold text-foreground">Concepto:</span>{" "}
+                  {serviceName}
+                </p>
               </div>
             </div>
             <div className="space-y-6 border border-secondary bg-white/50 p-6">
               <h2 className="text-2xl font-semibold">Confirmación</h2>
               <p className="text-foreground/70">
-                Envía tu comprobante para activar el proceso de onboarding estratégico.
+                Una vez realizada la transferencia, envía el comprobante vía WhatsApp para
+                iniciar el diagnóstico de tu propiedad digital.
               </p>
               <Link href={whatsappHref} className={buttonClasses({ variant: "primary" })}>
-                Confirmar por WhatsApp
+                Enviar comprobante
               </Link>
             </div>
           </div>
