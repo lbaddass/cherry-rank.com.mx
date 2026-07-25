@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import ServiceCard from "@/components/ui/ServiceCard";
+import Link from "next/link";
 
 export type Service = {
   title: string;
@@ -44,14 +45,29 @@ const services: Service[] = [
 
 export default function ServiciosPage() {
   return (
-    <main>
-      <Section>
+    <main className="min-h-screen bg-cream">
+      <Section dense className="pt-16">
         <Container className="space-y-8">
           <div className="max-w-2xl space-y-3">
-            <h1 className="text-4xl font-semibold md:text-5xl">Servicios de autoridad</h1>
-            <p className="text-foreground/70">
-              Paquetes diseñados para líderes que buscan influencia sostenible en mercados
-              de alta exigencia.
+            <Link
+              href="/"
+              className="text-sm font-medium text-ash transition-colors hover:text-cherry focus-ring rounded-sm"
+            >
+              ← Cherry Rank
+            </Link>
+            <h1
+              className="font-display font-bold text-ink"
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Servicios de autoridad
+            </h1>
+            <p className="text-lg text-ash">
+              Paquetes diseñados para líderes que buscan influencia sostenible
+              en mercados de alta exigencia.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">

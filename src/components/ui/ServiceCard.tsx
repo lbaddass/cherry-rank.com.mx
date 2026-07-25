@@ -12,24 +12,29 @@ export type ServiceCardProps = {
   slug: string;
 };
 
-export default function ServiceCard({ title, price, features, slug }: ServiceCardProps) {
+export default function ServiceCard({
+  title,
+  price,
+  features,
+  slug,
+}: ServiceCardProps) {
   return (
     <motion.article
       whileHover={{ y: -4 }}
-      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      className="flex h-full flex-col justify-between rounded-sm border border-secondary bg-white/50 p-6 shadow-sm transition duration-fast ease-out-expo hover:border-primary/30 hover:shadow-lg"
+      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      className="flex h-full flex-col justify-between rounded-2xl border border-[#E5E1DA] bg-pearl p-8 transition duration-300 hover:border-cherry md:p-10"
     >
       <div className="space-y-4">
         <div>
-          <h3 className="text-2xl font-semibold text-foreground font-crimson">
-            {title}
-          </h3>
-          <p className="mt-2 text-xl font-bold text-primary font-inter">{price}</p>
+          <h3 className="font-display text-xl font-semibold text-ink">{title}</h3>
+          <p className="mt-2 font-display text-3xl font-bold text-cherry">
+            {price}
+          </p>
         </div>
-        <ul className="space-y-2 text-sm text-foreground/80">
+        <ul className="space-y-2 text-sm text-ash">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-primary" />
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-cherry" />
               <span>{feature}</span>
             </li>
           ))}
@@ -38,7 +43,8 @@ export default function ServiceCard({ title, price, features, slug }: ServiceCar
       <div className="mt-6">
         <Link
           href={`/checkout?service=${slug}`}
-          className={buttonClasses({ variant: "outline" })}
+          className={buttonClasses({ variant: "outline", size: "full" })}
+          data-cursor-hover
         >
           Contratar
         </Link>

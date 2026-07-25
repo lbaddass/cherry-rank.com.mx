@@ -1,31 +1,46 @@
 "use client";
-import { motion } from "framer-motion";
 
-export const AscendingPulse = () => {
+import { motion, useReducedMotion } from "framer-motion";
+
+export function AscendingPulse() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <svg
       width="100%"
-      height="100"
+      height="96"
       viewBox="0 0 400 100"
       preserveAspectRatio="none"
+      aria-hidden
+      className="mb-6"
     >
+      <defs>
+        <linearGradient id="cherryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#E94F37" />
+          <stop offset="100%" stopColor="#FF6B35" />
+        </linearGradient>
+      </defs>
       <motion.path
-        d="M 0 80 C 40 80, 60 20, 100 20 C 140 20, 160 80, 200 80 C 240 80, 260 20, 300 20 C 340 20, 360 80, 400 80"
+        d="M 0 82 C 50 82, 70 55, 110 48 C 160 38, 180 72, 230 55 C 280 38, 300 22, 350 18 C 375 16, 390 14, 400 12"
         fill="none"
-        stroke="#F44A22"
-        strokeWidth="4"
-        initial={{ pathLength: 0 }}
+        stroke="url(#cherryGradient)"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        initial={{ pathLength: reduceMotion ? 1 : 0 }}
         whileInView={{ pathLength: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
         viewport={{ once: true }}
       />
-      <motion.path
-        d="M 0 80 C 40 80, 60 20, 100 20 C 140 20, 160 80, 200 80 C 240 80, 260 20, 300 20 C 340 20, 360 80, 400 80"
-        fill="none"
-        stroke="#F44A22"
-        strokeWidth="4"
-        strokeOpacity="0.3"
+      <motion.circle
+        cx="400"
+        cy="12"
+        r="6"
+        fill="#10B981"
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: [0, 1.4, 1], opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.4, ease: "easeOut" }}
+        viewport={{ once: true }}
       />
     </svg>
   );
-};
+}

@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "700"],
+  variable: "--font-space-grotesk",
+  weight: ["500", "600", "700"],
+  display: "swap",
 });
-
-// Clash Display is imported in globals.css
-const clash = {
-  variable: "--font-clash",
-};
 
 export const metadata: Metadata = {
-  title: "Cherry Rank | Architects of Authority",
-  description: "Cherry Rank builds SEO authority infrastructure for premium brands.",
+  title: "Cherry Rank | SEO con IA para México",
+  description:
+    "O sales en Google, o no existes. Auditoría gratis de autoridad, SEO local e IA de imagen para negocios en México.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${jetbrains.variable} ${clash.variable}`}>
-      <body className="bg-background text-foreground">
-        {children}
-      </body>
+    <html lang="es-MX" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-cream font-sans text-ink antialiased">{children}</body>
     </html>
   );
 }

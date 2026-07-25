@@ -1,19 +1,32 @@
-@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  --void: #0a0a0a;
+  --cream: #faf8f5;
+  --cherry: #e94f37;
+  --burnt: #ff6b35;
+  --ink: #1a1a1a;
+  --ash: #6b6b6b;
+  --smoke: #2a2a2a;
+  --pearl: #eae6df;
+  --success: #10b981;
+  color-scheme: light;
 }
 
 html {
-  @apply h-full overflow-y-scroll snap-y snap-mandatory;
+  @apply h-full scroll-smooth;
+}
+
+html.cursor-none,
+html.cursor-none * {
+  cursor: none !important;
 }
 
 body {
-  @apply bg-background text-foreground font-inter antialiased h-full;
+  @apply min-h-full bg-cream font-sans text-ink antialiased;
+  letter-spacing: -0.01em;
 }
 
 h1,
@@ -22,9 +35,84 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-clash;
+  @apply font-display font-bold;
 }
 
 * {
-  @apply selection:bg-primary/15 selection:text-foreground;
+  @apply selection:bg-cherry/20 selection:text-ink;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient-cherry {
+    @apply bg-gradient-to-r from-cherry to-burnt bg-clip-text text-transparent;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cherry focus-visible:ring-offset-2;
+  }
+}
+
+/* Hero SSR-first entrance (visible without JS) */
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-cta-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
+    animation: hero-line-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-fade {
+    animation: hero-fade-in 0.6s cubic-bezier(0.0, 0.0, 0.2, 1) both;
+  }
+
+  .hero-cta {
+    animation: hero-cta-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
 }

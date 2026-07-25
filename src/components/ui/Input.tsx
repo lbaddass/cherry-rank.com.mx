@@ -7,7 +7,7 @@ export default function Input({ className, ...props }: InputProps) {
   return (
     <input
       className={clsx(
-        "w-full border-b border-secondary bg-transparent py-2 text-base text-foreground placeholder:text-foreground/50 focus:border-primary focus:outline-none",
+        "w-full rounded-xl border border-[#E5E1DA] bg-cream px-4 py-3 text-base text-ink placeholder:text-ash/70 transition focus:border-cherry focus:outline-none focus-visible:ring-2 focus-visible:ring-cherry focus-visible:ring-offset-2",
         className
       )}
       {...props}
